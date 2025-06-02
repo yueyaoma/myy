@@ -1,0 +1,171 @@
+/* Responsive Breakpoints
+  - Mobile: < 768px
+  - Tablet: 768px - 991px
+  - Small Desktop: 992px - 1199px
+  - Large Desktop: >= 1200px
+*/
+
+/* Tablet & Below */
+@media (max-width: 991px) {
+  /* Typography */
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  /* Header & Navigation */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--bg-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-header);
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links li {
+    margin: var(--space-4) 0;
+  }
+  
+  /* About Section */
+  .about-content {
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  
+  .about-image, .about-text {
+    flex: none;
+    width: 100%;
+  }
+  
+  /* Contact Section */
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-info {
+    margin-bottom: var(--space-8);
+  }
+  
+  /* Gallery */
+  .gallery-container {
+    columns: 2;
+  }
+}
+
+/* Mobile Only */
+@media (max-width: 767px) {
+  /* Sections */
+  section {
+    padding: var(--space-12) 0;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+  
+  /* Hero Section */
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-content p {
+    font-size: var(--font-size-base);
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  /* Skills & Hobbies */
+  .skills-content,
+  .hobbies-content {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Portfolio */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Gallery */
+  .gallery-container {
+    columns: 1;
+  }
+  
+  /* Filter Buttons */
+  .filter-btn {
+    margin-bottom: var(--space-2);
+  }
+  
+  /* Navigation Menu Toggle */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* Small Desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .gallery-container {
+    columns: 3;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: var(--container-max-width);
+  }
+  
+  .gallery-container {
+    columns: 4;
+  }
+}
+
+/* Height-based Media Queries */
+@media (max-height: 600px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: var(--space-16) 0;
+  }
+}
